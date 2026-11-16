@@ -178,7 +178,7 @@ HushPlugin::make()
 HushPlugin::make()->userAppearance(['accent', 'density', 'darkVariant']);
 ```
 
-<p align="center"><img src="https://raw.githubusercontent.com/templix-pro/filament-hush-docs/main/art/appearance.jpg" alt="The Appearance modal with accent, density, corners, layout and dark mode choices" width="100%"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/templix-pro/filament-hush-docs/main/art/appearance.jpg" alt="The Appearance modal with accent, density, corners, layout, background and dark mode choices" width="100%"></p>
 
 Choices are stored in a cookie by default, so they follow the browser. To keep them on the account instead, so they follow the person to every device, add a JSON column to your users table:
 
