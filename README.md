@@ -11,7 +11,7 @@
 
 <p align="center">
   <strong>A quiet, precise theme for Filament panels.</strong><br>
-  Three layouts, six accents, three dark shades, a per-user Appearance menu, a branded sign-in and Lucide icons, in one plugin.
+  Three layouts, six accents, three backgrounds, three dark shades, a per-user Appearance menu, a branded sign-in and Lucide icons, in one plugin.
 </p>
 
 <p align="center">
@@ -55,8 +55,9 @@ Hush restyles every part of a Filament panel (navigation, tables, forms, actions
 - **Three layouts.** *Classic* puts a top bar across the page. *Inset* sets the content on a rounded sheet inside a tinted frame. *Sidebar* drops the top bar and gives the content the full height of the window.
 - **Six accents, or any color.** Teal, Indigo, Violet, Rose, Amber and Graphite, or pass a hex, rgb or oklch color, or any Filament palette. Neutrals and status colors stay tuned to Hush.
 - **Density and corners.** A comfortable or compact rhythm for data-heavy panels, and sharp, default or rounded corners.
+- **Three backgrounds.** *Soft* keeps the page, the sidebar and the top bar on one tone. *Tinted* sets the sidebar and the top bar a step deeper than the page. *Bright* lifts the sidebar and the top bar to the white of the cards. The page never takes the cards' color, so cards and tables always stand out. Each works in light mode and in every dark shade.
 - **Three dark shades.** The default dark, a softer *Dim* gray, and pure *Black* for OLED screens.
-- **Per-user Appearance menu.** An optional item in the user menu lets each person choose their own accent, density, corners, layout and dark shade. Choices are kept in a cookie or on the user record.
+- **Per-user Appearance menu.** An optional item in the user menu lets each person choose their own accent, density, corners, layout, background and dark shade. Choices are kept in a cookie or on the user record.
 - **Branded sign-in.** A brand panel with your logo, a heading and a description beside the sign-in, registration, password reset and two-factor pages.
 - **Lucide icons.** One call swaps 217 of Filament's own icons for Lucide, and the full Lucide set (2,356 icons) ships with the plugin for your navigation and actions.
 - **Collapsed brand mark.** When the sidebar collapses in the Sidebar layout, your logo gives way to a compact mark.
@@ -119,6 +120,7 @@ Every option is a method on the plugin. Each accepts an enum or its string value
 ```php
 use Filament\Support\Colors\Color;
 use TemplixPro\FilamentHush\HushAccent;
+use TemplixPro\FilamentHush\HushBackground;
 use TemplixPro\FilamentHush\HushDarkVariant;
 use TemplixPro\FilamentHush\HushDensity;
 use TemplixPro\FilamentHush\HushIconSet;
@@ -131,6 +133,7 @@ HushPlugin::make()
     ->accent(HushAccent::Indigo)        // or '#4f46e5', or Color::Sky
     ->density(HushDensity::Compact)
     ->radius(HushRadius::Rounded)
+    ->background(HushBackground::Tinted)
     ->darkVariant(HushDarkVariant::Dim)
     ->iconSet(HushIconSet::Lucide)
     ->userAppearance();
@@ -142,9 +145,10 @@ HushPlugin::make()
 | `accent()` | `Teal`, `Indigo`, `Violet`, `Rose`, `Amber`, `Graphite`, a color string or a Filament palette | `Teal` |
 | `density()` | `Comfortable`, `Compact` | `Comfortable` |
 | `radius()` | `Sharp`, `Default`, `Rounded` | `Default` |
+| `background()` | `Soft`, `Tinted`, `Bright` | `Soft` |
 | `darkVariant()` | `Default`, `Dim`, `Black` | `Default` |
 | `iconSet()` | `Heroicons`, `Lucide` | `Heroicons` |
-| `userAppearance()` | `true`, or a list of `accent`, `density`, `radius`, `layout`, `darkVariant` | off |
+| `userAppearance()` | `true`, or a list of `accent`, `density`, `radius`, `layout`, `background`, `darkVariant` | off |
 | `storeAppearanceUsing()` | `CookieAppearanceStore`, `UserAttributeAppearanceStore` or your own `AppearanceStore` | cookie |
 | `splitAuth()` | a heading, a description and an optional condition | off |
 | `brandMark()` | an image URL, an `Htmlable` such as an inline SVG, or a closure | the brand's initial |

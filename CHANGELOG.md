@@ -2,6 +2,11 @@
 
 All notable changes to Hush are documented here. Hush follows [semantic versioning](https://semver.org).
 
+## 1.1.0 — 16 November 2026
+
+- Background option, set with `background()` or picked by each person in Appearance: *Soft* (the default, unchanged) keeps the page, the sidebar and the top bar on one tone, *Tinted* sets the sidebar and the top bar a step deeper than the page, and *Bright* lifts the sidebar and the top bar to the white of the cards. The page keeps a tone of its own, so cards and tables always stand out. Each works in the Classic, Inset and Sidebar layouts, in light mode and in every dark shade.
+- Panels that save appearance on the user record now store `background` along with the other choices. Saved choices without it keep the panel's default.
+
 ## 1.0.1 — 14 November 2026
 
 - License agreement rewritten for business use: Single project and Unlimited projects tiers defined by production projects, one year of updates with continued use of the last version received, a 30-day refund window and a verification clause.
